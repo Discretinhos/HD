@@ -1,0 +1,181 @@
+questoes = {
+    1: {
+        "pergunta": "Qual técnica de demonstração se utiliza para provar uma afirmação ao demonstrar que o contrário levaria a uma contradição?",
+        "opcoes": ["A) Indução", "B) Contrapositivo", "C) Contradição", "D) Prova Direta"],
+        "resposta": "C"
+    },
+
+    2: {
+        "pergunta": "Em uma prova por contrapositivo, para provar P=>Q qual afirmação é provada?",
+        "opcoes": ["A) Q=>P", "B) ¬P⇒¬Q", "C) ¬Q⇒¬P", "D) P^Q=>¬Q"],
+        "resposta": "C"
+    },
+
+    3: {
+        "pergunta": "Qual técnica de prova é mais apropriada para provar uma afirmação da forma “para todo n, se n é par, então n^2 é par”?",
+        "opcoes": ["A) Contrapositiva", "B) Indução", "C) Contradição", "D) Prova Direta"],
+        "resposta": "D"
+    },
+
+    4: {
+        "pergunta": "A técnica de indução matemática é frequentemente usada para provar proposições sobre...",
+        "opcoes": ["A) Números Racionais", "B) Números Naturais", "C) Números Complexos", "D) Números Irracionais"],
+        "resposta": "B"
+    },
+
+    5: {
+        "pergunta": "Para provar que 'se um número é ímpar, então seu quadrado também é ímpar', qual técnica seria mais adequada?",
+        "opcoes": ["A) Contradição", "B) Prova Direta", "C) Contrapositivo", "D) Indução"],
+        "resposta": "B"
+    },
+
+    6: {
+        "pergunta": "Na indução matemática, qual é o primeiro passo?",
+        "opcoes": ["A) Provar a afirmação para n+1", "B) Provar a afirmação para n=1", "C) Assumir a afirmação para n e n+1", "D) Refutar a afirmação para valores ímpares"],
+        "resposta": "B"
+    },
+
+    7: {
+        "pergunta": "Para provar uma proposição para todos os números naturais, qual método é mais eficiente?",
+        "opcoes": ["A) Contrapositivo", "B) Indução", "C) Contradição", "D) Prova Direta"],
+        "resposta": "B"
+    },
+
+    8: {
+        "pergunta": "Ao provar uma afirmação por contradição, assumimos...",
+        "opcoes": ["A) Que a afirmação é falsa", "B) Que a afirmação é verdadeira", "C) Que ambas são verdadeiras", "D) Que nenhuma delas é verdadeira"],
+        "resposta": "A"
+    },
+
+    9: {
+        "pergunta": "Para provar que a raiz quadrada de 2 é irracional, qual técnica é geralmente utilizada?",
+        "opcoes": ["A) Contrapositivo", "B) Prova Direta", "C) Indução", "D) Contradição"],
+        "resposta": "D"
+    },
+
+    10: {
+        "pergunta": "Na prova por contrapositivo, qual proposição alternativa você assume para provar P=>Q?",
+        "opcoes": ["A) P=>Q", "B) ¬P=>¬Q", "C) ¬Q⇒¬P", "D) Q=>P"],
+        "resposta": "C"
+    },
+
+    11: {
+        "pergunta": "Qual técnica de demonstração é mais útil para provar a fórmula da soma dos primeiros n números naturais?",
+        "opcoes": ["A) Contradição", "B) Indução", "C) Contrapositivo", "D) Redução ao absurdo"],
+        "resposta": "B"
+    },
+
+    12: {
+        "pergunta": "Para provar uma implicação “Se A, então B” usando contrapositivo, devemos provar...",
+        "opcoes": ["A) Se B é falso, então A é falso", "B) Se B é verdadeiro, então A é falso", "C) Se A é verdadeiro, então B é falso", "D) Se A é falso, então B é falso"],
+        "resposta": "A"
+    },
+
+    13: {
+        "pergunta": "Qual técnica envolve assumir o oposto de uma afirmação e derivar uma contradição?",
+        "opcoes": ["A) Indução", "B) Contradição", "C) Contrapositivo", "D) Prova Direta"],
+        "resposta": "B"
+    },
+
+    14: {
+        "pergunta": "Para provar que a soma de dois números ímpares é par, a técnica recomendada é...",
+        "opcoes": ["A) Contradição", "B) Contrapositiva", "C) Prova Direta", "D) Indução"],
+        "resposta": "C"
+    },
+
+    15: {
+        "pergunta": "Uma prova que demonstra uma proposição ao verificar que a negação leva a uma conclusão impossível é chamada de...",
+        "opcoes": ["A) Indução", "B) Contrapositivo", "C) Contradição", "D) Prova Direta"],
+        "resposta": "C"
+    },
+
+    16: {
+        "pergunta": "Para mostrar que uma proposição P implica Q em uma prova direta, qual suposição inicial fazemos?",
+        "opcoes": ["A) Q é falso", "B) Q é verdadeiro", "C) P é verdadeiro", "D) P é falso"],
+        "resposta": "C"
+    },
+
+    17: {
+        "pergunta": "Qual dos seguintes é um exemplo de prova por contrapositivo?",
+        "opcoes": ["A) Suponha que P e Q sejam verdadeiros", "B) Suponha que ¬Q e derive ¬P", "C) Suponha Q e prove P", "D) Suponha que ¬P é falso"],
+        "resposta": "B"
+    },
+
+    18: {
+        "pergunta": "Para provar que não existe número racional cuja raiz quadrada seja 3, utilizamos...",
+        "opcoes": ["A) Indução", "B) Prova Direta", "C) Contradição", "D) Contrapositivo"],
+        "resposta": "C"
+    },
+
+    19: {
+        "pergunta": "Qual técnica é frequentemente utilizada em proposições do tipo 'para todo número natural n'?",
+        "opcoes": ["A) Contrapositivo", "B) Indução", "C) Prova Direta", "D) Contradição"],
+        "resposta": "B"
+    },
+
+    20: {
+        "pergunta": "Qual técnica requer a demonstração de uma base e um passo de indução?",
+        "opcoes": ["A) Contradição", "B) Contrapositivo", "C) Indução", "D) Prova Direta"],
+        "resposta": "C"
+    },
+
+    21: {
+        "pergunta": "Para provar que o produto de dois números racionais é racional, qual técnica é mais adequada?",
+        "opcoes": ["A) Prova Direta", "B) Contrapositivo", "C) Contradição", "D) Indução"],
+        "resposta": "A"
+    },
+
+    22: {
+        "pergunta": "Qual técnica é utilizada para provar que se um número é divisível por 4, então seu quadrado é divisível por 16?",
+        "opcoes": ["A) Prova Direta", "B) Indução", "C) Contrapositivo", "D) Contradição"],
+        "resposta": "A"
+    },
+
+    23: {
+        "pergunta": "A afirmação 'se um número é par, então seu sucessor é ímpar' pode ser provada usando...",
+        "opcoes": ["A) Indução", "B) Prova Direta", "C) Contrapositivo", "D) Contradição"],
+        "resposta": "B"
+    },
+
+    24: {
+        "pergunta": "Para provar que n² − n é par para todo número natural n, a técnica sugerida é...",
+        "opcoes": ["A) Contrapositivo", "B) Indução", "C) Contradição", "D) Prova Direta"],
+        "resposta": "B"
+    },
+
+    25: {
+        "pergunta": "Qual técnica de demonstração seria melhor para provar que a soma de um número par com um ímpar é ímpar?",
+        "opcoes": ["A) Contradição", "B) Prova Direta", "C) Indução", "D) Contrapositivo"],
+        "resposta": "B"
+    },
+
+    26: {
+        "pergunta": "Para provar que o mínimo divisor de um número primo é ele mesmo, usamos...",
+        "opcoes": ["A) Contradição", "B) Indução", "C) Contrapositivo", "D) Prova Direta"],
+        "resposta": "D"
+    },
+
+    27: {
+        "pergunta": "Para provar que um número natural n é divisível por 3, assumimos que n≡0(mod3) e mostramos que...",
+        "opcoes": ["A) n=3k+1", "B) n=3k", "C) n≡2(mod3)", "D) n=k+3"],
+        "resposta": "B"
+    },
+
+    28: {
+        "pergunta": "Para provar que um conjunto finito tem um número de subconjuntos que é uma potência de 2, usamos...",
+        "opcoes": ["A) Contrapositivo", "B) Indução", "C) Contradição", "D) Prova Direta"],
+        "resposta": "B"
+    },
+
+    29: {
+        "pergunta": "Para mostrar que um número par multiplicado por outro número par é par, usamos...",
+        "opcoes": ["A) Contradição", "B) Indução", "C) Contrapositiva", "D) Prova Direta"],
+        "resposta": "D"
+    },
+
+    30: {
+        "pergunta": "Provar que a soma de dois múltiplos de um número é múltiplo desse número é um exemplo de...",
+        "opcoes": ["A) Indução", "B) Contradição", "C) Contrapositivo", "D) Prova Direta"],
+        "resposta": "D"
+    }
+}
