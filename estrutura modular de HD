@@ -1,0 +1,20 @@
+/HD
+│
+├── assets
+│   └── Recursos
+|       ├── mapa.jpg
+│       ├── icon.jpg
+│       ├── sprites_Ella_prota-standing.png
+│       ├── sprites_Ella_prota-moving1.png
+│       ├── sprites_Ella_prota-moving2.png
+│       ├── coracao.png
+│       ├── ticket_primavera.png
+│       ├── ticket_verao.png
+│       ├── ticket_outono.png
+│       ├── ticket_inverno.png
+│       └── musica_meu.mp3
+│
+├── consts.py
+├── personagem.py
+├── game.py
+└── main.py
