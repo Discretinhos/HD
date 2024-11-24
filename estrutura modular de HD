@@ -13,7 +13,10 @@
 │       ├── ticket_outono.png
 │       ├── ticket_inverno.png
 │       └── musica_meu.mp3
-│
+│   └── Backgrounds
+│       ├── todos os backgrounds
+│   └── barras_xp
+│       ├── todas as barras xp
 ├── consts.py
 ├── personagem.py
 ├── game.py
