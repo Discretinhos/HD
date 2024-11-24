@@ -1,7 +1,7 @@
 import pygame
 import sys
-from consts import MUSICA_FUNDO, SOM_PASSOS, LARGURA, ALTURA, RECURSOS
-from game import tela_inicial, jogo
+from consts import MUSICA_FUNDO, SOM_PASSOS, LARGURA, ALTURA, carregar_recursos
+from game import tela_inicial
 
 # Inicializa o pygame
 pygame.init()
@@ -11,15 +11,8 @@ pygame.mixer.init()
 tela = pygame.display.set_mode((LARGURA, ALTURA))
 pygame.display.set_caption("Horizonte Discreto")
 
-def carregar_imagens():
-    """Carrega todas as imagens e recursos necessários."""
-    # Aqui você deve garantir que o dicionário RECURSOS seja preenchido corretamente
-    # Exemplo:
-    # RECURSOS['sprites_parado'] = pygame.image.load("assets/Recursos/sprites_Ella_prota-standing.png").convert_alpha()
-    pass  # Remova isso e implemente a função
-
 # Carrega os recursos
-carregar_imagens()  # Garante que o dicionário RECURSOS esteja preenchido
+RECURSOS = carregar_recursos()
 
 # Carrega a música de fundo
 try:
@@ -37,10 +30,7 @@ except pygame.error as e:
 
 def main():
     # Exibe a tela inicial
-    tela_inicial(RECURSOS)
-
-    # Inicia o jogo após a tela inicial
-    jogo(RECURSOS)
+    tela_inicial()
 
 if __name__ == "__main__":
     try:

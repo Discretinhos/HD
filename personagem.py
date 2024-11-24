@@ -1,5 +1,8 @@
 import pygame
-from consts import PERSONAGEM_X, PERSONAGEM_Y, PERSONAGEM_LARGURA, PERSONAGEM_ALTURA, LARGURA, ALTURA, RECURSOS
+from consts import LARGURA, ALTURA,PERSONAGEM_X, PERSONAGEM_Y, PERSONAGEM_LARGURA, PERSONAGEM_ALTURA, carregar_recursos
+
+# Carrega os recursos
+RECURSOS = carregar_recursos()
 
 class Personagem:
     def __init__(self, x=PERSONAGEM_X, y=PERSONAGEM_Y):
@@ -16,7 +19,7 @@ class Personagem:
         self.sprite_moving2 = RECURSOS['sprites_moving2']
 
         self.sprites_direita = [self.sprite_moving1, self.sprite_moving2]
-        self.sprites_esquerda = [pygame.transform.flip(self.sprite_moving1, True , False),
+        self.sprites_esquerda = [pygame.transform.flip(self.sprite_moving1, True, False),
                                  pygame.transform.flip(self.sprite_moving2, True, False)]
 
         self.sprite_atual = self.sprite_parado
@@ -26,10 +29,8 @@ class Personagem:
         self.rect = pygame.Rect(self.x, self.y, PERSONAGEM_LARGURA, PERSONAGEM_ALTURA)
 
     def atualizar(self, teclas):
-        """Atualiza a posição e animação do personagem com base nas teclas pressionadas."""
-        self.moving = False  # Reseta o estado de movimento
+        self.moving = False
 
-        # Movimentação do personagem
         if teclas[pygame.K_LEFT]:
             self.x -= self.velocidade
             self.direcao = 'esquerda'
@@ -39,15 +40,11 @@ class Personagem:
             self.direcao = 'direita'
             self.moving = True
 
-        # Limitar o movimento do personagem dentro da tela
         self.x = max(0, min(self.x, LARGURA - PERSONAGEM_LARGURA))
-
-        # Se o personagem está no chão, limita a posição y
         self.y = max(0, min(self.y, ALTURA - PERSONAGEM_ALTURA))
 
-        # Atualiza a animação e a posição do retângulo
         self.animar()
-        self.rect.topleft = (self.x, self.y)  # Atualiza a posição do retângulo
+        self.rect.topleft = (self.x, self.y)
 
     def animar(self):
         agora = pygame.time.get_ticks()

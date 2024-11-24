@@ -21,37 +21,39 @@ TAMANHO_BAU = (44, 44)
 MUSICA_FUNDO = "assets/Recursos/musica_meu.mp3"
 SOM_PASSOS = "assets/Recursos/som_passos.wav"
 
-# Declare a constante RECURSOS
-RECURSOS = {
-    'icon': pygame.image.load("assets/Recursos/icon.jpg"),
-    'sprites_parado': pygame.image.load("assets/Recursos/sprites_Ella_prota-standing.png").convert_alpha(),
-    'sprites_moving1': pygame.image.load("assets/Recursos/sprites_Ella_prota-moving1.png").convert_alpha(),
-    'sprites_moving2': pygame.image.load("assets/Recursos/sprites_Ella_prota-moving2.png").convert_alpha(),
-    'coracao': pygame.transform.scale(pygame.image.load("assets/Recursos/coracao.png"), (30, 30)),
-    'primavera': {
-        'background_nitido': pygame.image.load("assets/Backgrounds/cenario1(primavera-nitido).jpg"),
-        'bau': pygame.image.load("assets/Recursos/baú fechado.png"),
-        'ticket': pygame.transform.scale(pygame.image.load("assets/Recursos/ticket_primavera.png"), (44, 44))
-    },
-    'verao': {
-        'background_nitido': pygame.image.load("assets/Backgrounds/cenario2(verao-nitido).jpg"),
-        'bau': pygame.image.load("assets/Recursos/bau_verao.png"),
-        'ticket': pygame.transform.scale(pygame.image.load("assets/Recursos/ticket_verao.png"), (44, 44))
-    },
-    'outono': {
-        'background_nitido': pygame.image.load("assets/Backgrounds/cenario3(outono-nitido).jpg"),
-        'bau': pygame.image.load("assets/Recursos/baú_outono.png"),
-        'ticket': pygame.transform.scale(pygame.image.load("assets/Recursos/ticket_outono.png"), (44, 44))
-    },
-    'inverno': {
-        'background_nitido': pygame.image.load("assets/Backgrounds/cenario4(inverno-nitido).jpg"),
-        'bau': pygame.image.load("assets/Recursos/bau_inverno.png"),
-        'ticket': pygame.transform.scale(pygame.image.load("assets/Recursos/ticket_inverno.png"), (44, 44))
-    },
-    'barra_xp': pygame.transform.scale(pygame.image.load("assets/barras_xp/barra_xp_comeco.png"), (200, 50)),
-    'mapa': pygame.transform.scale(pygame.image.load("assets/Recursos/mapa.jpg"), (1280, 700)),
-    'tela_inicial': pygame.image.load("assets/Recursos/tela_inicial.jpg")  # Atualize para uma imagem real
-}
+# Função para carregar recursos
+def carregar_recursos():
+    recursos = {
+        'icon': pygame.image.load("assets/Recursos/icon.jpg"),
+        'sprites_parado': pygame.image.load("assets/Recursos/sprites_Ella_prota-standing.png").convert_alpha(),
+        'sprites_moving1': pygame.image.load("assets/Recursos/sprites_Ella_prota-moving1.png").convert_alpha(),
+        'sprites_moving2': pygame.image.load("assets/Recursos/sprites_Ella_prota-moving2.png").convert_alpha(),
+        'coracao': pygame.transform.scale(pygame.image.load("assets/Recursos/coracao.png"), (30, 30)),
+        'primavera': {
+            'background_nitido': pygame.image.load("assets/Backgrounds/cenario1(primavera-nitido).jpg"),
+            'bau': pygame.image.load("assets/Recursos/baú fechado.png"),
+            'ticket': pygame.transform.scale(pygame.image.load("assets/Recursos/ticket_primavera.png"), (44, 44))
+        },
+        'verao': {
+            'background_nitido': pygame.image.load("assets/Backgrounds/cenario2(verao-nitido).jpg"),
+            'bau': pygame.image.load("assets/Recursos/bau_verao.png"),
+            'ticket': pygame.transform.scale(pygame.image.load("assets/Recursos/ticket_verao.png"), (44, 44))
+        },
+        'outono': {
+            'background_nitido': pygame.image.load("assets/Backgrounds/cenario3(outono-nitido).jpg"),
+            'bau': pygame.image.load("assets/Recursos/baú_outono.png"),
+            'ticket': pygame.transform.scale(pygame.image.load("assets/Recursos/ticket_outono.png"), (44, 44))
+        },
+        'inverno': {
+            'background_nitido': pygame.image.load("assets/Backgrounds/cenario4(inverno-nitido).jpg"),
+            'bau': pygame.image.load("assets/Recursos/bau_inverno.png"),
+            'ticket': pygame.transform.scale(pygame.image.load("assets/Recursos/ticket_inverno.png"), (44, 44))
+        },
+        'barra_xp': pygame.transform.scale(pygame.image.load("assets/barras_xp/barra_xp_comeco.png"), (200, 50)),
+        'mapa': pygame.transform.scale(pygame.image.load("assets/Recursos/mapa.jpg"), (1280, 700)),
+        'tela_inicial': pygame.image.load("assets/Recursos/tela_inicial.jpg")  # Atualize para uma imagem real
+    }
+    return recursos
 
 # Dicionário de questões
 QUESTOES = {
