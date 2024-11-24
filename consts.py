@@ -16,7 +16,7 @@ BAR_XP_X, BAR_XP_Y = 25, 10
 NUM_CORACOES = 3
 
 # Tamanho do baú
-TAMANHO_BAU = (44, 44)
+TAMANHO_BAU =   (44, 44)
 
 MUSICA_FUNDO = "assets/Recursos/musica_meu.mp3"
 SOM_PASSOS = "assets/Recursos/som_passos.wav"
