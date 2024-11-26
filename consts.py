@@ -1,63 +1,22 @@
-import pygame
+# consts.py
 
 # Dimensões da tela
 LARGURA = 1365
 ALTURA = 510
 
-# Posições e dimensões do personagem
-PERSONAGEM_X, PERSONAGEM_Y = 100, 440
-PERSONAGEM_LARGURA, PERSONAGEM_ALTURA = 64, 64
+# Cores
+BRANCO = (255, 255, 255)
+PRETO = (0, 0, 0)
 
-# Posições do baú e barra de experiência
-BAU_X, BAU_Y = 1290, 443
-BAR_XP_X, BAR_XP_Y = 25, 10
+# Posições iniciais e dimensões
+personagem_x, personagem_y = 20, 440
+personagem_largura, personagem_altura = 64, 64
+bau_x, bau_y = 1280, 432  # Ajuste a posição do baú
+barra_xp_x, barra_xp_y = 25, 10
+coracao_x, coracao_y = 60, 80  # Posição Y dos corações
 
-# Corações
-NUM_CORACOES = 3
-
-# Tamanho do baú
-TAMANHO_BAU =   (44, 44)
-
-MUSICA_FUNDO = "assets/Recursos/musica_meu.mp3"
-SOM_PASSOS = "assets/Recursos/som_passos.wav"
-
-# Função para carregar recursos
-def carregar_recursos():
-    recursos = {
-        'icon': pygame.image.load("assets/Recursos/icon.jpg"),
-        'sprites_parado': pygame.image.load("assets/Recursos/sprites_Ella_prota-standing.png").convert_alpha(),
-        'sprites_moving1': pygame.image.load("assets/Recursos/sprites_Ella_prota-moving1.png").convert_alpha(),
-        'sprites_moving2': pygame.image.load("assets/Recursos/sprites_Ella_prota-moving2.png").convert_alpha(),
-        'coracao': pygame.transform.scale(pygame.image.load("assets/Recursos/coracao.png"), (30, 30)),
-        'primavera': {
-            'background_nitido': pygame.image.load("assets/Backgrounds/cenario1(primavera-nitido).jpg"),
-            'bau': pygame.image.load("assets/Recursos/baú fechado.png"),
-            'ticket': pygame.transform.scale(pygame.image.load("assets/Recursos/ticket_primavera.png"), (44, 44))
-        },
-        'verao': {
-            'background_nitido': pygame.image.load("assets/Backgrounds/cenario2(verao-nitido).jpg"),
-            'bau': pygame.image.load("assets/Recursos/bau_verao.png"),
-            'ticket': pygame.transform.scale(pygame.image.load("assets/Recursos/ticket_verao.png"), (44, 44))
-        },
-        'outono': {
-            'background_nitido': pygame.image.load("assets/Backgrounds/cenario3(outono-nitido).jpg"),
-            'bau': pygame.image.load("assets/Recursos/baú_outono.png"),
-            'ticket': pygame.transform.scale(pygame.image.load("assets/Recursos/ticket_outono.png"), (44, 44))
-        },
-        'inverno': {
-            'background_nitido': pygame.image.load("assets/Backgrounds/cenario4(inverno-nitido).jpg"),
-            'bau': pygame.image.load("assets/Recursos/bau_inverno.png"),
-            'ticket': pygame.transform.scale(pygame.image.load("assets/Recursos/ticket_inverno.png"), (44, 44))
-        },
-        'barra_xp': pygame.transform.scale(pygame.image.load("assets/barras_xp/barra_xp_comeco.png"), (200, 50)),
-        'mapa': pygame.transform.scale(pygame.image.load("assets/Recursos/mapa.jpg"), (1280, 700)),
-        'tela_inicial': pygame.image.load("assets/Recursos/tela_inicial.jpg")  # Atualize para uma imagem real
-    }
-    return recursos
-
-# Dicionário de questões
 QUESTOES = {
-    'primavera': { # Adicione todas as questões da primavera aqui
+    'primavera': {
         1: {
             "pergunta": "Qual técnica de demonstração se utiliza para provar uma afirmação ao demonstrar que o contrário levaria a uma contradição?",
             "opcoes": ["A) Indução", "B) Contrapositivo", "C) Contradição", "D) Prova Direta"],
@@ -66,7 +25,7 @@ QUESTOES = {
         2: {
             "pergunta": "Em uma prova por contrapositivo, para provar P=>Q qual afirmação é provada?",
             "opcoes": ["A) Q=>P", "B) ¬P⇒¬Q", "C) ¬Q⇒¬P", "D) P^Q=>¬Q"],
-            "resposta": "C"
+            "resposta": "B"
         },
         3: {
             "pergunta": "Qual técnica de prova é mais apropriada para provar uma afirmação da forma “para todo n, se n é par, então n^2 é par”?",
@@ -117,11 +76,12 @@ QUESTOES = {
         },
         12: {
             "pergunta": "Para provar uma implicação “Se A, então B” usando contrapositivo, devemos provar...",
-            "opcoes": ["A) Se B é falso, então A é falso", "B) Se B é verdadeiro, então A é falso",
+            "opcoes": ["A) Se B é falso , então A é falso", "B) Se B é verdadeiro, então A é falso",
                        "C) Se A é verdadeiro, então B é falso", "D) Se A é falso, então B é falso"],
             "resposta": "A"
         },
         13: {
+
             "pergunta": "Qual técnica envolve assumir o oposto de uma afirmação e derivar uma contradição?",
             "opcoes": ["A) Indução", "B) Contradição", "C) Contrapositivo", "D) Prova Direta"],
             "resposta": "B"
@@ -213,7 +173,7 @@ QUESTOES = {
             "resposta": "D"
         }
     },
-    'verao': { # Adicione todas as questões do verão aqui
+    'verao': {
         1: {
             "pergunta": "Quantas maneiras diferentes há para escolher 2 pessoas de um grupo de 5?",
             "opcoes": ["A) 5", "B) 10", "C) 15", "D) 20"],
@@ -254,8 +214,8 @@ QUESTOES = {
             "opcoes": ["A) 28", "B) 36", "C) 16", "D) 20"],
             "resposta": "A"
         },
-         9: {
-            "pergunta": "Quantas maneiras diferentes há de organizar as letras na palavra 'BANANA'?",
+        9: {
+            "pergunta": "Quantas maneiras diferentes há de organizar as letras na palavra 'BANANA'",
             "opcoes": ["A) 60", "B) 120", "C) 720", "D) 360"],
             "resposta": "D"
         },
@@ -326,7 +286,7 @@ QUESTOES = {
         },
         23: {
             "pergunta": "Qual é o número de maneiras de organizar as letras na palavra 'ELEFANTE'?",
-            "opcoes": ["A) 40,320", "B) 20,160", "C) 80,640", "D) 60,480"],
+            "opcoes": ["A) 40,320", " B)20,160", "C) 80,640", "D) 60,480"],
             "resposta": "D"
         },
         24: {
@@ -365,182 +325,190 @@ QUESTOES = {
             "resposta": "C"
         }
     },
-    'outono': { # Adicione todas as questões do outono aqui
+    'outono': {
         1: {
- "pergunta": "Qual é a definição básica de recursão em ciência da computação?",
-            "opcoes": ["A) Uma função que chama a si mesma", "B) Uma função que nunca termina",
-                       "C) Uma função que chama outra função", "D) Um loop infinito"],
-            "resposta": "A"
+            "pergunta": "Qual é a definição de uma função?",
+            "opcoes": ["A) Um conjunto de pares ordenados",
+                       "B) Uma relação que associa cada elemento de um conjunto a um único elemento de outro conjunto",
+                       "C) Uma equação matemática", "D) Um gráfico"],
+            "resposta": "B"
         },
         2: {
-            "pergunta": "Qual das seguintes é uma condição necessária para uma função recursiva?",
-            "opcoes": ["A) Uma variável global", "B) Uma condição base", "C) Um loop", "D) Um contador"],
-            "resposta": "B"
+            "pergunta": "Qual dos seguintes não é um exemplo de função?",
+            "opcoes": ["A) f(x) = x^2", "B) g(x) = 2x + 3", "C) h(x) = { (1,2), (1,3) }", "D) j(x) = sin(x)"],
+            "resposta": "C"
         },
         3: {
-            "pergunta": "Qual função recursiva é frequentemente usada para calcular o valor de n! (fatorial de n)?",
-            "opcoes": ["A) Soma", "B) Potência", "C) Multiplicação", "D) Fatorial"],
-            "resposta": "D"
+            "pergunta": "O que é uma função injetora?",
+            "opcoes": ["A) Uma função onde cada valor de saída é associado a um único valor de entrada",
+                       "B) Uma função onde dois valores de entrada podem ter o mesmo valor de saída",
+                       "C) Uma função que não tem valores de saída repetidos",
+                       "D) Uma função que não é definida para todos os números"],
+            "resposta": "A"
         },
         4: {
-            "pergunta": "Qual é o resultado da função recursiva para fatorial de 0?",
-            "opcoes": ["A) 0", "B) 1", "C) 2", "D) Indefinido"],
-            "resposta": "B"
+            "pergunta": "Qual é a imagem da função f(x) = 2x + 1 quando x = 3?",
+            "opcoes": ["A) 5", "B) 6", "C) 7", "D) 8"],
+            "resposta": "C"
         },
         5: {
-            "pergunta": "Qual é a principal vantagem do uso de recursão?",
-            "opcoes": ["A) Menor uso de memória", "B) Código mais simples e legível", "C) Reduz o tempo de execução",
-                       "D) Evita o uso de funções"],
+            "pergunta": "Uma função é dita ser sobrejetora se...",
+            "opcoes": ["A) Cada elemento do domínio é mapeado para um único elemento do contradomínio",
+                       "B) Cada elemento do contradomínio é atingido por pelo menos um elemento do domínio",
+                       "C) Não há elementos repetidos no domínio",
+                       "D) A função é injetora"],
             "resposta": "B"
         },
         6: {
-            "pergunta": "O que é um caso base em uma função recursiva?",
-            "opcoes": ["A) O caso que faz a função repetir", "B) O caso em que a função chama outra função",
-                       "C) O caso que termina a recursão", "D) O caso que nunca é alcançado"],
-            "resposta": "C"
+            "pergunta": "Qual é o domínio da função f(x) = 1/x?",
+            "opcoes": ["A) Todos os números reais", "B) Todos os números reais, exceto zero",
+                       "C) Números inteiros positivos", "D) Números inteiros não-negativos"],
+            "resposta": "B"
         },
         7: {
-            "pergunta": "Qual das seguintes estruturas é mais usada para implementar recursão?",
-            "opcoes": ["A) Pilha", "B) Fila", "C) Lista", "D) Tabela Hash"],
-            "resposta": "A"
+            "pergunta": "Uma função bijetora é...",
+            "opcoes": ["A) Apenas injetora", "B) Apenas sobrejetora",
+                       "C) Tanto injetora quanto sobrejetora", "D) Não é injetora nem sobrejetora"],
+            "resposta": "C"
         },
         8: {
-            "pergunta": "O que é 'recursão direta'?",
-            "opcoes": ["A) Quando uma função chama outra função", "B) Quando uma função chama a si mesma",
-                       "C) Quando uma função chama duas outras funções", "D) Quando uma função nunca termina"],
+            "pergunta": "Se f(x) = x², qual é o contradomínio de f?",
+            "opcoes": ["A) Todos os números reais", "B) Todos os números reais não-negativos",
+                       "C) Números inteiros positivos", "D) Todos os números inteiros"],
             "resposta": "B"
         },
         9: {
-            "pergunta": "O que ocorre se uma função recursiva não tiver um caso base?",
-            "opcoes": ["A) A função termina normalmente", "B) A função entra em um loop infinito",
-                       "C) A função retorna zero", "D) A função é ignorada pelo compilador"],
-            "resposta": "B"
+            "pergunta": "Qual é a composição das funções f(x) = x + 2 e g(x) = 3x?",
+            "opcoes": ["A) (f ∘ g)(x) = 3x + 2", "B) (f ∘ g)(x) = 3x + 6",
+                       "C) (f ∘ g)(x) = x + 2", "D) (f ∘ g)(x) = 9x + 2"],
+            "resposta": "A"
         },
         10: {
-            "pergunta": "Qual é o papel de uma condição de parada em recursão?",
-            "opcoes": ["A) Iniciar a recursão", "B) Reduzir o valor de uma variável", "C) Parar a recursão",
-                       "D) Duplicar a função"],
-            "resposta": "C"
+            "pergunta": "Qual é o valor da função inversa f^-1(x) se f(x) = 2x + 3?",
+            "opcoes": ["A) (x - 3)/2", "B) 2x - 3", "C) x/2 + 3", "D) x + 3/2"],
+            "resposta": "A"
         },
         11: {
-            "pergunta": "Qual é o uso da recursão na resolução de problemas?",
-            "opcoes": ["A) Para problemas que requerem repetição", "B) Para problemas lineares",
-                       "C) Para problemas que podem ser divididos em subproblemas menores",
-                       "D) Para problemas que não possuem solução base"],
-            "resposta": "C"
+            "pergunta": "Se f(x) = x² e g(x) = √x, qual é (g ∘ f)(x)?",
+            "opcoes": ["A) x", "B) x²", "C) √x", "D) x^4"],
+            "resposta": "A"
         },
         12: {
-            "pergunta": "Qual das seguintes é uma aplicação comum de recursão?",
-            "opcoes": ["A) Calculadora", "B) Fatorial e sequência de Fibonacci", "C) Processador de texto",
-                       "D) Planilha eletrônica"],
-            "resposta": "B"
+            "pergunta": "A função f(x) = sin(x) é...",
+            "opcoes": ["A) Injetora e sobrejetora", "B) Apenas sobrejetora",
+                       "C) Apenas injetora", "D) Nem injetora nem sobrejetora no domínio dos reais"],
+            "resposta": "D"
         },
         13: {
-            "pergunta": "Qual das alternativas define 'recursão indireta'?",
-            "opcoes": ["A) Uma função que chama outra função que eventualmente chama a função original",
-                       "B) Uma função que nunca chama outra função", "C) Uma função que chama a si mesma",
-                       "D) Uma função que retorna um valor fixo"],
+            "pergunta": "O que é o zero de uma função?",
+            "opcoes": ["A) Um valor de x onde f(x) = 0", "B) Um valor de x onde f(x) é infinito",
+                       "C) Um valor de f(x) onde x = 0", "D) Um ponto de máximo da função"],
             "resposta": "A"
         },
         14: {
-            "pergunta": "Qual é a saída da função recursiva que calcula Fibonacci de 5?",
-            "opcoes": ["A) 5", "B) 8", "C) 13", "D) 21"],
+            "pergunta": "Se f(x) = x² + 1, f é injetora no domínio dos reais?",
+            "opcoes": ["A) Sim", "B) Não", "C) Apenas para x > 0", "D) Apenas para x < 0"],
             "resposta": "B"
         },
         15: {
-            "pergunta": "A recursão pode ser substituída por qual estrutura de controle?",
-            "opcoes": ["A) Estrutura de seleção", "B) Estrutura de repetição (loops)", "C) Estrutura condicional",
-                       "D) Estrutura de interrupção"],
-            "resposta": "B"
+            "pergunta": "Se f(x) = 2x e g(x) = x + 1, qual é (f ∘ g)(x)?",
+            "opcoes": ["A) 2x + 2", "B) 2x + 1", "C) x + 3", "D) x + 2"],
+            "resposta": "A"
         },
         16: {
-            "pergunta": "Quantas chamadas recursivas são feitas para calcular o fatorial de 4?",
-            "opcoes": ["A) 2", "B) 3", "C) 4", "D) 5"],
-            "resposta": "D"
+            "pergunta": "Qual é a definição do domínio de uma função?",
+            "opcoes": ["A) O conjunto de valores de saída",
+                       "B) O conjunto de valores para os quais a função é definida",
+                       "C) O conjunto de pares ordenados",
+                       "D) O conjunto de números inteiros"],
+            "resposta": "B"
         },
         17: {
-            "pergunta": "Quais dos seguintes problemas podem ser resolvidos usando recursão?",
-            "opcoes": ["A) Ordenação de listas", "B) Somar duas variáveis", "C) Multiplicação", "D) Filtragem de dados"],
+            "pergunta": "Se f(x) = 1/x e g(x) = x + 1, qual é (f ∘ g)(x)?",
+            "opcoes": ["A) 1/(x + 1)", "B) 1/x + 1", "C) x + 1", "D) 1/x"],
             "resposta": "A"
         },
         18: {
-            "pergunta": "Qual das seguintes não é uma característica da recursão?",
-            "opcoes": ["A) Uso de chamadas de função", "B) Uso de caso base", "C) Uso de variáveis globais",
-                       "D) Uso de pilha para armazenar chamadas"],
-            "resposta": "C"
-        },
-        19: {
-            "pergunta": "Recursão pode ser mais eficiente do que loops?",
-            "opcoes": ["A) Sempre", "B) Em problemas que podem ser divididos em subproblemas", "C) Nunca",
-                       "D) Em cálculos matemáticos simples"],
+            "pergunta": "Qual é a definição de uma função sobrejetora?",
+            "opcoes": ["A) Uma função onde cada valor de saída é associado a um único valor de entrada",
+                       "B) Uma função onde dois valores de entrada podem ter o mesmo valor de saída",
+                       "C) Uma função que não tem valores de saída repetidos",
+                       "D) Uma função que não é definida para todos os números"],
             "resposta": "B"
         },
+        19: {
+            "pergunta": "Se f(x) = x^2 e g(x) = √x, qual é (f ∘ g)(x)?",
+            "opcoes": ["A) x", "B) x²", "C) √x", "D) x^4"],
+            "resposta": "A"
+        },
         20: {
-            "pergunta": "Qual das seguintes é uma vantagem da recursão?",
-            "opcoes": ["A) Menor tempo de execução", "B) Menor uso de memória", "C) Simplificação de problemas complexos",
-                       "D) Necessidade de mais código"],
+            "pergunta": "Qual é a definição de uma função bijetora?",
+            "opcoes": ["A) Apenas injetora", "B) Apenas sobrejetora",
+                       "C) Tanto injetora quanto sobrejetora", "D) Não é injetora nem sobrejetora"],
             "resposta": "C"
         },
         21: {
-            "pergunta": "Como a função recursiva fatorial de um número n é geralmente escrita?",
-            "opcoes": ["A) f(n) = n + f(n-1)", "B) f(n) = n * f(n-1)", "C) f(n) = f(n-1)", "D) f(n) = n - f(n-1)"],
-            "resposta": "B"
+            "pergunta": "Se f(x) = 2x + 3 e g(x) = x - 1, qual é (f ∘ g)(x)?",
+            "opcoes": ["A) 2x + 1", "B) 2x + 2", "C) 2x + 3", "D) 2x + 4"],
+            "resposta": "A"
         },
         22: {
-            "pergunta": "Recursão é uma abordagem natural para resolver problemas de qual natureza?",
-            "opcoes": ["A) Iterativos", "B) Lineares", "C) Dividir para conquistar", "D) Aleatórios"],
-            "resposta": "C"
+            "pergunta": "Qual é a definição de uma função injetora?",
+            "opcoes": ["A) Uma função onde cada valor de saída é associado a um único valor de entrada",
+                       "B) Uma função onde dois valores de entrada podem ter o mesmo valor de saída",
+                       "C) Uma função que não tem valores de saída repetidos",
+                       "D) Uma função que não é definida para todos os números"],
+            "resposta": "A"
         },
         23: {
-            "pergunta": "Qual é uma desvantagem da recursão?",
-            "opcoes": ["A) Aumenta a complexidade", "B) Consome mais memória devido à pilha de chamadas", "C) É mais lento",
-                       "D) Não pode ser usado em problemas grandes"],
-            "resposta": "B"
+            "pergunta": "Se f(x) = x^2 e g(x) = 1/x, qual é (f ∘ g)(x)?",
+            "opcoes": ["A) 1/x²", "B) x²", "C) 1/x", "D) x"],
+            "resposta": "A"
         },
         24: {
-            "pergunta": "Qual das seguintes é uma aplicação prática da recursão?",
-            "opcoes": ["A) Contar caracteres em uma string", "B) Multiplicação", "C) Processamento de árvores binárias",
-                       "D) Processamento de matrizes"],
-            "resposta": "C"
+            "pergunta": "Qual é a definição de uma função sobrejetora?",
+            "opcoes": ["A) Uma função onde cada valor de saída é associado a um único valor de entrada",
+                       "B) Uma função onde dois valores de entrada podem ter o mesmo valor de saída",
+                       "C) Uma função que não tem valores de saída repetidos",
+                       "D) Uma função que não é definida para todos os números"],
+            "resposta": "B"
         },
         25: {
-            "pergunta": "Na recursão, o que acontece com cada chamada recursiva?",
-            "opcoes": ["A) É armazenada em uma fila", "B) É armazenada na pilha", "C) É descartada imediatamente",
-                       "D) É processada em ordem reversa"],
-            "resposta": "B"
+            "pergunta": "Se f(x) = 2x + 1 e g(x) = x - 2, qual é (f ∘ g)(x)?",
+            "opcoes": ["A) 2x - 3", "B) 2x - 2", "C) 2x - 1", "D) 2x + 1"],
+            "resposta": "A"
         },
         26: {
-            "pergunta": "Para qual estrutura de dados é mais adequada a recursão?",
-            "opcoes": ["A) Fila", "B) Lista", "C) Pilha", "D) Dicionário"],
-            "resposta": "C"
+            "pergunta": "Qual é a definição de uma função constante?",
+            "opcoes": ["A) Uma função que não muda seu valor", "B) Uma função que muda seu valor",
+                       "C) Uma função que é sempre zero", "D) Uma função que é linear"],
+            "resposta": "A"
         },
         27: {
-            "pergunta": "Quais são os casos mais comuns onde recursão é útil?",
-            "opcoes": ["A) Jogos", "B) Algoritmos de busca e ordenação", "C) Processamento de dados",
-                       "D) Edição de imagens"],
-            "resposta": "B"
+            "pergunta": "Qual é a definição de uma função linear?",
+            "opcoes": ["A) Uma função que pode ser representada por uma linha reta", "B) Uma função que não é contínua",
+                       "C) Uma função que tem um máximo e um mínimo", "D) Uma função que não tem raízes"],
+            "resposta": "A"
         },
         28: {
-            "pergunta": "Qual é uma limitação da recursão em sistemas com pilha limitada?",
-            "opcoes": ["A) Processamento lento", "B) Excesso de variáveis", "C) Estouro de pilha",
-                       "D) Uso de função global"],
-            "resposta": "C"
+            "pergunta": "Qual é a definição de uma função quadrática?",
+            "opcoes": ["A) Uma função que pode ser representada por uma parábola", "B) Uma função que é linear","C) Uma função que não tem raízes", "D) Uma função que é constante"],
+            "resposta": "A"
         },
         29: {
-            "pergunta": "A profundidade de uma chamada recursiva refere-se a...",
-            "opcoes": ["A) Número de vezes que a função é chamada", "B) A quantidade de memória usada",
-                       "C) O número de parâmetros", "D) A estrutura de dados usada"],
+            "pergunta": "Qual é a definição de uma função exponencial?",
+            "opcoes": ["A) Uma função onde a variável está no expoente", "B) Uma função que é linear",
+                       "C) Uma função que não tem raízes", "D) Uma função que é constante"],
             "resposta": "A"
         },
         30: {
-            "pergunta": "A recursão de cauda é...",
-            "opcoes": ["A) Uma função que termina em um loop",
-                       "B) Uma recursão onde a chamada recursiva é a última operação", "C) Uma função sem caso base",
-                       "D) Uma função que nunca termina"],
-            "resposta": "B"
+            "pergunta": "Qual é a definição de uma função logarítmica?",
+            "opcoes": ["A) A inversa de uma função exponencial", "B) Uma função que é linear",
+                       "C) Uma função que não tem raízes", "D) Uma função que é constante"],
+            "resposta": "A"
         }
     },
-    'inverno': { # Adicione todas as questões do inverno aqui
+    'inverno': {
         1: {
             "pergunta": "Qual é a definição básica de recursão em ciência da computação?",
             "opcoes": ["A) Uma função que chama a si mesma", "B) Uma função que nunca termina",
@@ -674,8 +642,8 @@ QUESTOES = {
         },
         24: {
             "pergunta": "Qual das seguintes é uma aplicação prática da recursão?",
-            "opcoes": ["A) Contar caracteres em uma string", "B) Multiplicação", "C) Processamento de árvores binárias",
-                       "D) Processamento de matrizes"],
+            "opcoes": ["A) Contar caracteres em uma string", "B) Multiplicação",
+            "C) Processamento de árvores binárias", "D) Processamento de matrizes"],
             "resposta": "C"
         },
         25: {
@@ -709,13 +677,12 @@ QUESTOES = {
         },
         30: {
             "pergunta": "A recursão de cauda é...",
-            "opcoes": ["A) Uma função que termina em um loop",
-                       "B) Uma recursão onde a chamada recursiva é a última operação", "C) Uma função sem caso base",
+            "opcoes": ["A) Uma função que termina em um loop", "B) Uma recursão onde a chamada recursiva é a última operação", "C) Uma função sem caso base",
                        "D) Uma função que nunca termina"],
             "resposta": "B"
         }
     },
-    'pico': { # Adicione todas as questões do pico aqui
+    'pico': {
         1: {
             "pergunta": "O que é um grafo em teoria dos grafos?",
             "opcoes": ["A) Um conjunto de pontos e linhas conectando pares de pontos", "B) Um conjunto de números",
@@ -742,7 +709,7 @@ QUESTOES = {
         5: {
             "pergunta": "Qual o nome dado a um grafo sem ciclos?",
             "opcoes": ["A) Conexo", "B) Ciclo", "C) Árvore", "D) Completo"],
-            "resposta": "B"
+            "resposta": "C"
         },
         6: {
             "pergunta": "Qual estrutura de dados é mais comumente usada para representar grafos em memória?",
@@ -751,15 +718,13 @@ QUESTOES = {
         },
         7: {
             "pergunta": "Qual algoritmo é frequentemente utilizado para encontrar o caminho mais curto em um grafo?",
-            "opcoes": ["A) Algoritmo de Dijkstra", "B) Algoritmo de Kruskal", "C) Algoritmo de Prim",
-                       "D) Algoritmo de Bellman-Ford"],
+            "opcoes": ["A) Algoritmo de Dijkstra", "B) Algoritmo de Kruskal", "C) Algoritmo de Prim", "D) Algoritmo de Bellman-Ford"],
             "resposta": "A"
         },
         8: {
             "pergunta": "O que é um vértice de corte em um grafo?",
-            "opcoes": ["A) Um vértice que aumenta o grau de outros vértices",
-                       "B) Um vértice cuja remoção desconecta o grafo", "C) Um vértice sem arestas conectadas",
-                       "D) Um vértice que forma um ciclo"],
+            "opcoes": ["A) Um vértice que aumenta o grau de outros vértices", "B) Um vértice cuja remoção desconecta o grafo",
+                       "C) Um vértice sem arestas conectadas", "D) Um vértice que forma um ciclo"],
             "resposta": "B"
         },
         9: {
@@ -797,9 +762,8 @@ QUESTOES = {
         },
         15: {
             "pergunta": "O que é um grafo completo?",
-            "opcoes": ["A) Um grafo onde todos os vértices têm o mesmo grau",
-                       "B) Um grafo em que todos os vértices estão conectados entre si", "C) Um grafo com um ciclo",
-                       "D) Um grafo com número ímpar de arestas"],
+            "opcoes": ["A) Um grafo onde todos os vértices têm o mesmo grau", "B) Um grafo em que todos os vértices estão conectados entre si",
+                       "C) Um grafo com um ciclo", "D) Um grafo com número ímpar de arestas"],
             "resposta": "B"
         },
         16: {
@@ -815,22 +779,19 @@ QUESTOES = {
         },
         18: {
             "pergunta": "O que é um grafo bipartido?",
-            "opcoes": ["A) Um grafo com duas cores",
-                       "B) Um grafo com vértices divididos em dois conjuntos onde arestas conectam apenas vértices de conjuntos diferentes",
+            "opcoes": ["A) Um grafo com duas cores", "B) Um grafo com vértices divididos em dois conjuntos onde arestas conectam apenas vértices de conjuntos diferentes",
                        "C) Um grafo completo", "D) Um grafo com dois ciclos"],
             "resposta": "B"
         },
         19: {
             "pergunta": "O que é um grafo planar?",
-            "opcoes": ["A) Um grafo que pode ser desenhado no plano sem arestas cruzadas",
-                       "B) Um grafo com apenas três vértices", "C) Um grafo que possui ciclos", "D) Um grafo completo"],
+            "opcoes": ["A) Um grafo que pode ser desenhado no plano sem arestas cruzadas",  "B)Um grafo com apenas três vértices", "C) Um grafo que possui ciclos", "D) Um grafo completo"],
             "resposta": "A"
         },
         20: {
             "pergunta": "Qual é a diferença entre um caminho e um circuito em um grafo?",
-            "opcoes": ["A) Caminho é fechado, circuito é aberto",
-                       "B) Caminho não tem ciclos, circuito é um caminho fechado", "C) Caminho é maior que o circuito",
-                       "D) Caminho é completo, circuito é bipartido"],
+            "opcoes": ["A) Caminho é fechado, circuito é aberto", "B) Caminho não tem ciclos, circuito é um caminho fechado",
+                       "C) Caminho é maior que o circuito", "D) Caminho é completo, circuito é bipartido"],
             "resposta": "B"
         },
         21: {
@@ -879,14 +840,12 @@ QUESTOES = {
         },
         29: {
             "pergunta": "Qual é a principal característica de um grafo direcionado acíclico?",
-            "opcoes": ["A) Possui ciclos", "B) Não possui ciclos", "C) Todos os vértices têm o mesmo grau",
-                       "D) É um grafo completo"],
+            "opcoes": ["A) Possui ciclos", "B) Não possui ciclos", "C) Todos os vértices têm o mesmo grau", "D) É um grafo completo"],
             "resposta": "B"
         },
         30: {
             "pergunta": "Qual dos seguintes é um exemplo de aplicação de grafos?",
             "opcoes": ["A) Redes sociais", "B) Calendário", "C) Funções matemáticas", "D) Pilhas de execução"],
-
             "resposta": "A"
         }
     }
